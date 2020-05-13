@@ -1,0 +1,18 @@
+{
+  "name": "bored-games-server",
+  "version": "0.1.0",
+  "description": "Multiplayer server for checkers/chess etc.",
+  "main": "public/bgServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./public/bgServer.js"
+  },
+  "author": "Steven Vogelaar",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "auto-bind": "^4.0.0",
+    "mongodb": "^3.5.7",
+    "ws": "^7.2.5"
+  }
+}
