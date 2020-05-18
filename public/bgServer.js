@@ -1,5 +1,9 @@
-const BoredGamesServer = require("../lib/BoredGamesServer.js");
+const BoredGamesServer = require("../lib/BoredGamesServer");
 const ConfigManager = require("../lib/ConfigManager");
+const DBService = require("../lib/DBService");
+
+
+server = new BoredGamesServer();
 
 process.on('SIGTERM', () => {
 	console.log("Process terminating ...");
@@ -8,19 +12,21 @@ process.on('SIGTERM', () => {
 
 process.on('SIGINT', () => {
 	console.log("Process terminating ...");
+
 	server.stop();
 })
 
 
-ConfigManager.openConfig();
-const config = ConfigManager.readConfig();
+startServer();
 
 
+async function startServer() {
 
+	await DBService.connectToDB();
 
-
-const server = new BoredGamesServer(config);
-server.run();
+	
+	server.run();
+}
 
 
 
