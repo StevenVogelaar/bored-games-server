@@ -1,6 +1,7 @@
 const BoredGamesServer = require("../lib/BoredGamesServer");
 const ConfigManager = require("../lib/ConfigManager");
 const DBService = require("../lib/DBService");
+const RoomManager = require('../lib/RoomManager');
 
 
 server = new BoredGamesServer();
@@ -17,6 +18,7 @@ process.on('SIGINT', () => {
 })
 
 
+RoomManager.init();
 startServer();
 
 
