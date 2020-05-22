@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "auto-bind": "^4.0.0",
+    "mongo-sanitize": "^1.1.0",
     "mongodb": "^3.5.7",
     "ws": "^7.2.5"
   }
